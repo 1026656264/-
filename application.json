@@ -1,19 +1,35 @@
 {
   "pages": [
     {
-      "id": "仓库管理页面",
+      "id": "登录",
       "isDefault": true
+    },
+    {
+      "id": "购物界面",
+      "isDefault": false
+    },
+    {
+      "id": "仓库管理页面",
+      "isDefault": false
+    },
+    {
+      "id": "机位管理",
+      "isDefault": false
+    },
+    {
+      "id": "人事管理",
+      "isDefault": false
     },
     {
       "id": "其他",
       "isDefault": false
     },
     {
-      "id": "登录",
+      "id": "充值",
       "isDefault": false
     },
     {
-      "id": "购物界面",
+      "id": "注册",
       "isDefault": false
     }
   ],
@@ -22,10 +38,10 @@
   "unreadCommentThreads": 0,
   "color": "#F1DEFF",
   "unpublishedAppLayout": {
-    "type": "DESKTOP"
+    "type": "FLUID"
   },
   "publishedAppLayout": {
-    "type": "FLUID"
+    "type": "DESKTOP"
   },
   "evaluationVersion": 2,
   "applicationVersion": 2,

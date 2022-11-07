@@ -1,6 +1,6 @@
 {
   "unpublishedPage": {
-    "name": "仓库管理页面",
+    "name": "机位管理",
     "slug": "",
     "layouts": [
       {
@@ -108,7 +108,7 @@
                       ],
                       "shouldTruncate": false,
                       "truncateButtonColor": "#FFC13D",
-                      "text": "仓库管理界面",
+                      "text": "机位管理页面",
                       "key": "60sa0ov4kb",
                       "isDeprecated": false,
                       "rightColumn": 39,
@@ -174,22 +174,16 @@
                           "key": "childStylesheet.editActions.discardBorderRadius"
                         },
                         {
-                          "key": "primaryColumns.name.computedValue"
+                          "key": "primaryColumns.id.computedValue"
                         },
                         {
-                          "key": "primaryColumns.count.computedValue"
+                          "key": "primaryColumns.conf.computedValue"
+                        },
+                        {
+                          "key": "primaryColumns.status.computedValue"
                         },
                         {
                           "key": "primaryColumns.price.computedValue"
-                        },
-                        {
-                          "key": "primaryColumns.earlyDate.computedValue"
-                        },
-                        {
-                          "key": "primaryColumns.qualiityTime.computedValue"
-                        },
-                        {
-                          "key": "primaryColumns.lateDate.computedValue"
                         },
                         {
                           "key": "primaryColumns.EditActions1.saveButtonColor"
@@ -207,7 +201,7 @@
                           "key": "primaryColumns.EditActions1.isDiscardDisabled"
                         },
                         {
-                          "key": "primaryColumns.earlyDate.buttonLabel"
+                          "key": "primaryColumns.totalTime.computedValue"
                         }
                       ],
                       "leftColumn": 3,
@@ -252,12 +246,11 @@
                       "widgetName": "Table1",
                       "defaultPageSize": 0,
                       "columnOrder": [
-                        "name",
-                        "count",
+                        "id",
+                        "conf",
+                        "status",
                         "price",
-                        "earlyDate",
-                        "lateDate",
-                        "qualiityTime",
+                        "totalTime",
                         "EditActions1"
                       ],
                       "dynamicPropertyPathList": [
@@ -273,31 +266,31 @@
                       "columnWidthMap": {
                         "task": 78,
                         "step": 62,
-                        "status": 114,
+                        "status": 105,
                         "action": 112,
                         "customColumn2": 111,
                         "name": 88,
                         "count": 87,
-                        "price": 91
+                        "price": 114,
+                        "conf": 174
                       },
                       "parentRowSpace": 10,
                       "hideCard": false,
                       "parentColumnSpace": 9.89453125,
                       "dynamicTriggerPathList": [],
                       "primaryColumns": {
-                        "name": {
+                        "id": {
                           "allowCellWrapping": false,
-                          "index": 0,
+                          "index": 5,
                           "width": 150,
-                          "originalId": "name",
-                          "id": "name",
-                          "alias": "name",
+                          "originalId": "id",
+                          "id": "id",
+                          "alias": "id",
                           "horizontalAlignment": "LEFT",
                           "verticalAlignment": "CENTER",
                           "columnType": "text",
                           "textColor": "",
                           "textSize": "0.875rem",
-                          "fontStyle": "",
                           "enableFilter": true,
                           "enableSort": true,
                           "isVisible": true,
@@ -306,19 +299,19 @@
                           "isEditable": true,
                           "isCellVisible": true,
                           "isDerived": false,
-                          "label": "物品名",
+                          "label": "机位号",
                           "isSaveVisible": true,
                           "isDiscardVisible": true,
-                          "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"name\"]))}}",
+                          "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"id\"]))}}",
                           "cellBackground": ""
                         },
-                        "count": {
+                        "conf": {
                           "allowCellWrapping": false,
-                          "index": 4,
+                          "index": 5,
                           "width": 150,
-                          "originalId": "count",
-                          "id": "count",
-                          "alias": "count",
+                          "originalId": "conf",
+                          "id": "conf",
+                          "alias": "conf",
                           "horizontalAlignment": "LEFT",
                           "verticalAlignment": "CENTER",
                           "columnType": "text",
@@ -332,15 +325,41 @@
                           "isEditable": true,
                           "isCellVisible": true,
                           "isDerived": false,
-                          "label": "数量",
+                          "label": "机位配置",
                           "isSaveVisible": true,
                           "isDiscardVisible": true,
-                          "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"count\"]))}}",
+                          "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"conf\"]))}}",
+                          "cellBackground": ""
+                        },
+                        "status": {
+                          "allowCellWrapping": false,
+                          "index": 5,
+                          "width": 150,
+                          "originalId": "status",
+                          "id": "status",
+                          "alias": "status",
+                          "horizontalAlignment": "LEFT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "text",
+                          "textColor": "",
+                          "textSize": "0.875rem",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isDisabled": false,
+                          "isCellEditable": true,
+                          "isEditable": true,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "使用状态",
+                          "isSaveVisible": true,
+                          "isDiscardVisible": true,
+                          "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"status\"]))}}",
                           "cellBackground": ""
                         },
                         "price": {
                           "allowCellWrapping": false,
-                          "index": 4,
+                          "index": 5,
                           "width": 150,
                           "originalId": "price",
                           "id": "price",
@@ -358,97 +377,11 @@
                           "isEditable": true,
                           "isCellVisible": true,
                           "isDerived": false,
-                          "label": "单价",
+                          "label": "消费价格",
                           "isSaveVisible": true,
                           "isDiscardVisible": true,
                           "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"price\"]))}}",
                           "cellBackground": ""
-                        },
-                        "lateDate": {
-                          "allowCellWrapping": false,
-                          "index": 3,
-                          "width": 150,
-                          "originalId": "lateDate",
-                          "id": "lateDate",
-                          "alias": "lateDate",
-                          "horizontalAlignment": "LEFT",
-                          "verticalAlignment": "CENTER",
-                          "columnType": "text",
-                          "textColor": "",
-                          "textSize": "0.875rem",
-                          "enableFilter": true,
-                          "enableSort": true,
-                          "isVisible": true,
-                          "isDisabled": false,
-                          "isCellEditable": true,
-                          "isEditable": true,
-                          "isCellVisible": true,
-                          "isDerived": false,
-                          "label": "最晚进货日期",
-                          "isSaveVisible": true,
-                          "isDiscardVisible": true,
-                          "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"lateDate\"]))}}",
-                          "cellBackground": "",
-                          "inputFormat": "YYYY-MM-DD",
-                          "outputFormat": "YYYY-MM-DD"
-                        },
-                        "earlyDate": {
-                          "allowCellWrapping": false,
-                          "index": 3,
-                          "width": 150,
-                          "originalId": "earlyDate",
-                          "id": "earlyDate",
-                          "alias": "earlyDate",
-                          "horizontalAlignment": "LEFT",
-                          "verticalAlignment": "CENTER",
-                          "columnType": "text",
-                          "textColor": "",
-                          "textSize": "0.875rem",
-                          "enableFilter": true,
-                          "enableSort": true,
-                          "isVisible": true,
-                          "isDisabled": false,
-                          "isCellEditable": true,
-                          "isEditable": true,
-                          "isCellVisible": true,
-                          "isDerived": false,
-                          "label": "最早进货日期",
-                          "isSaveVisible": true,
-                          "isDiscardVisible": true,
-                          "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"earlyDate\"]))}}",
-                          "cellBackground": "",
-                          "inputFormat": "YYYY-MM-DD",
-                          "outputFormat": "YYYY-MM-DD",
-                          "customAlias": "",
-                          "buttonLabel": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( '动作'))}}"
-                        },
-                        "qualiityTime": {
-                          "allowCellWrapping": false,
-                          "index": 5,
-                          "width": 150,
-                          "originalId": "qualiityTime",
-                          "id": "qualiityTime",
-                          "alias": "qualiityTime",
-                          "horizontalAlignment": "LEFT",
-                          "verticalAlignment": "CENTER",
-                          "columnType": "text",
-                          "textColor": "",
-                          "textSize": "0.875rem",
-                          "enableFilter": true,
-                          "enableSort": true,
-                          "isVisible": true,
-                          "isDisabled": false,
-                          "isCellEditable": true,
-                          "isEditable": true,
-                          "isCellVisible": true,
-                          "isDerived": false,
-                          "label": "保质期",
-                          "isSaveVisible": true,
-                          "isDiscardVisible": true,
-                          "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"qualiityTime\"]))}}",
-                          "cellBackground": "",
-                          "inputFormat": "YYYY-MM-DD",
-                          "outputFormat": "YYYY-MM-DD"
                         },
                         "EditActions1": {
                           "allowCellWrapping": false,
@@ -485,6 +418,32 @@
                           "discardButtonVariant": "TERTIARY",
                           "isSaveDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}",
                           "isDiscardDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}"
+                        },
+                        "totalTime": {
+                          "allowCellWrapping": false,
+                          "index": 6,
+                          "width": 150,
+                          "originalId": "totalTime",
+                          "id": "totalTime",
+                          "alias": "totalTime",
+                          "horizontalAlignment": "LEFT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "text",
+                          "textColor": "",
+                          "textSize": "0.875rem",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isDisabled": false,
+                          "isCellEditable": true,
+                          "isEditable": true,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "总时间",
+                          "isSaveVisible": true,
+                          "isDiscardVisible": true,
+                          "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"totalTime\"]))}}",
+                          "cellBackground": ""
                         }
                       },
                       "key": "6zxt59p3zp",
@@ -492,7 +451,7 @@
                       "rightColumn": 62,
                       "textSize": "0.875rem",
                       "widgetId": "u9gyc8r6w5",
-                      "tableData": "[\n  {\n\t  \"name\": \"物品1\", \n    \"count\": \"15\",\n    \"price\": \"3.5\",\n    \"earlyDate\": \"2022-09-24\",\n    \"lateDate\": \"2022-10-03\",\n\t\t\"qualiityTime\": \"2 years\"\n  },\n  {\n\t\t\"name\": \"物品2\", \n    \"count\": \"34\",\n\t\t\"price\": \"3.0\",\n   \"earlyDate\": \"2022-09-24\",\n\t \"lateDate\": \"2022-10-03\",\n    \"qualiityTime\": \"6 months\"\n  },\n  {\n\t\t\"name\": \"物品3\", \n    \"count\": \"52\",\n\t\t\"price\": \"5.0\",\n\t\t\"earlyDate\": \"2022-09-24\",\n\t \t\"lateDate\": \"2022-10-03\",\n    \"qualiityTime\": \"2 years\"\n  }\n]",
+                      "tableData": "[\n  {\n\t  \"id\": \"001\", \n    \"conf\": \"i5-12400kf, RTX3060\",\n    \"status\": \"1\",\n    \"totalTime\": \"1000\",\n\t\t\"price\": \"4.0\"\n  },\n\t{\n\t  \"id\": \"002\", \n    \"conf\": \"i5-12400kf, RTX3060\",\n    \"status\": \"0\",\n    \"totalTime\": \"1000\",\n\t\t\"price\": \"4.0\"\n  },\n\t{\n\t  \"id\": \"003\", \n    \"conf\": \"i5-12400kf, RTX3060\",\n    \"status\": \"0\",\n    \"totalTime\": \"1000\",\n\t\t\"price\": \"4.0\"\n  }\n]",
                       "label": "数据",
                       "searchKey": "",
                       "parentId": "bbppwejxqk",
@@ -674,7 +633,7 @@
         },
         "layoutOnLoadActions": [],
         "validOnPageLoadActions": true,
-        "id": "仓库管理页面",
+        "id": "机位管理",
         "deleted": false,
         "policies": [],
         "userPermissions": []
@@ -685,5 +644,5 @@
     "isHidden": false
   },
   "deleted": false,
-  "gitSyncId": "6369086e2ae0fe7791422594_6369086e2ae0fe7791422596"
+  "gitSyncId": "6369086e2ae0fe7791422594_63691d652ae0fe77914225d7"
 }
