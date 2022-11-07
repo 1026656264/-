@@ -1,0 +1,34 @@
+{
+  "pages": [
+    {
+      "id": "仓库管理页面",
+      "isDefault": true
+    },
+    {
+      "id": "其他",
+      "isDefault": false
+    },
+    {
+      "id": "登录",
+      "isDefault": false
+    },
+    {
+      "id": "购物界面",
+      "isDefault": false
+    }
+  ],
+  "viewMode": false,
+  "appIsExample": false,
+  "unreadCommentThreads": 0,
+  "color": "#F1DEFF",
+  "unpublishedAppLayout": {
+    "type": "FLUID"
+  },
+  "publishedAppLayout": {
+    "type": "FLUID"
+  },
+  "evaluationVersion": 2,
+  "applicationVersion": 2,
+  "isManualUpdate": false,
+  "deleted": false
+}
