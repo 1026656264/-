@@ -21,15 +21,19 @@
       "isDefault": false
     },
     {
-      "id": "其他",
-      "isDefault": false
-    },
-    {
       "id": "充值",
       "isDefault": false
     },
     {
       "id": "注册",
+      "isDefault": false
+    },
+    {
+      "id": "支付页面",
+      "isDefault": false
+    },
+    {
+      "id": "其他",
       "isDefault": false
     }
   ],
@@ -41,7 +45,7 @@
     "type": "FLUID"
   },
   "publishedAppLayout": {
-    "type": "DESKTOP"
+    "type": "FLUID"
   },
   "evaluationVersion": 2,
   "applicationVersion": 2,

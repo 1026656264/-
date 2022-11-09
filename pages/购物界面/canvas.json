@@ -19,7 +19,7 @@
           "parentRowSpace": 1,
           "type": "CANVAS_WIDGET",
           "canExtend": true,
-          "version": 60,
+          "version": 65,
           "minHeight": 650,
           "parentColumnSpace": 1,
           "dynamicBindingPathList": [],
@@ -880,11 +880,7 @@
                         }
                       ],
                       "privateWidgets": {
-                        "Image1": true,
-                        "Text1": true,
-                        "Text2": true,
-                        "MenuButton1": true,
-                        "MenuButton2": true
+                        "undefined": true
                       },
                       "key": "dadex6koaf",
                       "backgroundColor": "transparent",
@@ -1317,6 +1313,7 @@
           ]
         },
         "layoutOnLoadActions": [],
+        "layoutOnLoadActionErrors": [],
         "validOnPageLoadActions": true,
         "id": "购物界面",
         "deleted": false,
